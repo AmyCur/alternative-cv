@@ -22,7 +22,8 @@
     "typescript": "5.8.3"
   },
   "devDependencies": {
-    "wrangler": "4.21.x"
+    "sass-embedded": "^1.89.2",
+    "wrangler": "^4.27.0"
   },
   "scripts": {
     "astro": "astro",
