@@ -2,6 +2,9 @@
 import Layout from "./Layout.astro";
 import "../styles/page.scss"
 import Button from "../components/Button.astro";
+import Heading from "../components/heading.astro";
+
+const {heading} = Astro.props;
 ---
 
 <Layout>
@@ -10,15 +13,13 @@ import Button from "../components/Button.astro";
             <Button href="/">Home</Button>
             <Button href="/about">About Me</Button>
             <Button href="/games">My Games</Button>
-            <Button href="/annoying">Annoying Orange</Button>
         </div>
         <div id="main-box">
-            <slot name="heading" />
             <div id="text">
                 <div id="top">
-                    <slot name="top"/>
+                    <Heading>{heading}</Heading>
+                    <slot />
                 </div>
-                <slot name="other" />
             </div>
             
         </div>

@@ -5,17 +5,14 @@ import "../styles/games.scss"
 import Game from "../components/games/game.astro"
 ---
 
-<Page>
-    <span slot="heading">
-        <Heading>Games</Heading>
-    </span>
-    <span slot="top">
+<Page heading="Games">
+    <slot> 
         <div id="games">
             <Game name="The Meta Menaces" url="https://github.com/AmyCur/MM_Proj/releases/"/>
             <Game url="https://github.com/AmyCur/MM_Proj/releases/"/>
             <Game url="https://github.com/AmyCur/MM_Proj/releases/"/>
             <Game url="https://github.com/AmyCur/MM_Proj/releases/"/>
-            <Game url="https://github.com/AmyCur/MM_Proj/releases/"/>        
+            <Game url="https://github.com/AmyCur/MM_Proj/releases/"/>
         </div>
-    </span>
+    </slot>
 </Page>

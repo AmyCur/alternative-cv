@@ -113,59 +113,7 @@ $main-box-width: $width * 2 / 3 - 1;
                 
             }  
             
-            #flags{
-                display: flex;
-                justify-content: space-around;
-
-                .tooltip {
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-
-                    width: $main-box-width / 4;
-                    height: $main-box-width / 4 * 0.5625;
-                    border: 5px solid #1B2435;
-                    border-radius: 1vw;
-
-                    background-size: cover;
-
-                    // background-color: #EAC98C;
-                    // background-blend-mode: multiply;
-
-                }
-
-                .tooltip .tooltiptext{
-                    background-color: #1B243500;
-                    color: #ffffff00;
-                    a{
-                        color: #ffffff00;
-                    }
-                    text-align: center;
-                    padding: .5vw;
-                    border-radius: 6px;
-                    transition: all .2s ease;
-                    backdrop-filter: blur(0);
-                    
-                }
-
-
-                .tooltip:hover .tooltiptext{
-                    a{
-                        color: #ffffffff;
-                    }
-                    color: #ffffffff;
-                    background-color: #1B2435aa;
-                    backdrop-filter: blur(1vw);
-                    
-                }
-
-                
-                img{
-                    width: $main-box-width / 4;
-                    border: 5px solid #1B2435;
-                    border-radius: 1vw;
-                }
-            }
+            
 
             
             
