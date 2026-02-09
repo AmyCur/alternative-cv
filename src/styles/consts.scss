@@ -1,4 +1,7 @@
-$background-colour: #2d3948aa;
-$width: 60vw;
-$side-bar-width: $width / 3 - 1;
-$main-box-width: $width * 2 / 3 - 1;
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+
+:root{
+    color: white;
+    font-family: "Nunito", sans-serif;
+}
