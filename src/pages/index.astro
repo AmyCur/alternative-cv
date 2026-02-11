@@ -1,52 +1,26 @@
 ---
+import Button from "../components/Button.astro";
+import Window from "../components/Window.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Home">
-    <div class="chunk">
-        <div class="inner-chunk">
-            <a href="/retro">Retro Slop</a>
-        </div>
-    </div>
-    <div class="chunk">
-        <div class="inner-chunk">One</div>
-    </div>
-    <div class="chunk">
-        <div class="inner-chunk">
-            <h1>Hello!</h1>
-            <p>My name is ___, im a </p>
-        </div>
-    </div>
-    <div class="chunk">
-        <div class="inner-chunk">
-            <iframe style="border: 0; width: 90%; height: 90%;" src="https://bandcamp.com/EmbeddedPlayer/album=357879300/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/" seamless>
-                <a href="https://carseatheadrest.bandcamp.com/album/twin-fantasy">Twin Fantasy by Car Seat Headrest</a>
-            </iframe>
-        </div>
-    </div>
-
-    <style lang="scss">
-		$curve-radius: 1em;
-        
-        .chunk {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-            .inner-chunk {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                width: 18vw;
-                background-color: rgba(0, 0, 0, 0.1);
-                height: 18vw;
-                border-radius: $curve-radius;
-
-                iframe{
-                    border-radius: $curve-radius;
-                }
-            }
-        }
-    </style>
+    <Window class="chunk">
+        <h1>Hello!</h1>
+        <p style="width: 80%;">My name is ___, im a games designer from England currently studying games design</p>
+        <Button href="/about-me">About me</Button>
+    </Window>
+    <Window class="chunk">
+        <Button href="/retro">Retro Slop</Button>
+    </Window>
+    <Window class="chunk">
+        <h2>I make games and music</h2>
+        <Button href="/gallery">You can find thoses here</Button>
+    </Window>
+    <Window class="chunk">
+        <a href="https://carseatheadrest.bandcamp.com/album/twin-fantasy" style="height: 90%; display: flex; justify-content: center; ">
+            <iframe style="border: 0; border-radius: 1em; width: 90%;" src="https://bandcamp.com/EmbeddedPlayer/album=357879300/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/" seamless />
+        </a>
+    </Window>
 </Layout>
+

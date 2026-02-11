@@ -1,0 +1,31 @@
+---
+import a from "../components/Button.astro";
+import Window from "../components/Window.astro";
+import Layout from "../layouts/Layout.astro";
+const posts = Object.values(import.meta.glob('./projects/*.mdx', { eager: true }));
+---
+
+<Layout title="Gallery">
+    <div id="holder">
+        <div id="projects">
+            {posts.map(post => <a href={(post as any).url}><Window>{(post as any).frontmatter.title}</Window></a>)}
+        </div>
+    </div>
+    
+</Layout>
+
+<style lang="scss">
+    #holder{
+        width: 42vw;
+
+        #projects{
+            display: grid;
+            grid-template-columns: auto auto;
+            
+            &>*{
+                margin-bottom: 1em;
+            }
+        }
+    }
+    
+</style>

@@ -1,0 +1,64 @@
+<div class="window">
+    <div class="top-bar">
+        <div class="buttons">
+            <span>X</span>
+            <span>O</span>
+            <span>Y</span>
+        </div>
+    </div>
+    <div class="inner-window">
+        <span class="slot"><slot /></span>
+    </div>
+</div>
+
+<style lang="scss">
+    $curve-radius: 1em;
+
+    .window {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 1em;
+
+        .top-bar {
+            background-color: #232d38;
+            border: 0.1em solid white;
+            width: 18vw;
+            height: 3vh;
+            display: flex;
+            align-items: center;
+            justify-content: end;
+
+            .buttons {
+                width: 20%;
+                display: flex;
+                justify-content: space-around;
+            }
+        }
+
+        .inner-window {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 18vw;
+            background-color: rgba(0, 0, 0, 0.1);
+            border: 0.1em solid white;
+            border-top: none;
+            height: 18vw;
+            border-radius: 0 0 $curve-radius $curve-radius;
+
+            a {
+                border-radius: $curve-radius;
+            }
+
+            .slot{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+    }
+</style>

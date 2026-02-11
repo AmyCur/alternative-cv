@@ -1,6 +1,7 @@
 ---
 import "../styles/global.scss";
 import "../styles/consts.scss";
+import Button from "../components/Button.astro";
 const { title = "Base Title" } = Astro.props;
 ---
 
@@ -19,7 +20,9 @@ const { title = "Base Title" } = Astro.props;
 	<body>
 		<div id="content">
 			<div id="box">
-				<div id="side-bar"> <a href="/">Homeslop</a> </div>
+				<div id="side-bar">
+					 <Button href="/">Homeslop</Button> 
+				</div>
 				<div id="main-box">
 					<slot />
 				</div>
@@ -61,6 +64,11 @@ const { title = "Base Title" } = Astro.props;
 				width: 15vw;
 				background-color: rgba(0, 0, 0, 0.1);
 				border-radius: $curve-radius;
+				border: .1em solid white;
+				display: flex;
+				flex-direction: column;
+				justify-content: space-around;
+				align-items: center;
 			}
 
 			#main-box {
@@ -81,7 +89,7 @@ const { title = "Base Title" } = Astro.props;
 						width: 18vw;
 						background-color: rgba(0, 0, 0, 0.1);
 						height: 18vw;
-						border-radius: $curve-radius;
+						border-radius: $curve-radius $curve-radius $curve-radius $curve-radius;
 					}
 				}
 			}
