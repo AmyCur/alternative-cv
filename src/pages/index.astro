@@ -5,22 +5,55 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Home">
-    <Window class="chunk">
-        <h1>Hello!</h1>
-        <p style="width: 80%;">My name is ___, im a games designer from England currently studying games design</p>
-        <Button href="/about-me">About me</Button>
+    <a href="/about-me" class="chunk">
+        <Window>
+            <h1>About Me</h1>
+        </Window>
+    </a>
+    <a href="/retro" class="chunk">
+        <Window>
+            <h1>Retro Slop</h1>
+        </Window>
+    </a>
+    <a href="/gallery" class="chunk">
+        <Window >
+            <h1>Gallery</h1>
+        </Window>
+    </a>
+    <a href="#" class="chunk">
+        <Window >
+            <!-- <a href="https://carseatheadrest.bandcamp.com/album/twin-fantasy" style="height: 90%; display: flex; justify-content: center; ">
+                <iframe style="border: 0; border-radius: 1em; width: 90%;" src="https://bandcamp.com/EmbeddedPlayer/album=357879300/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/" seamless />
+            </a> -->
     </Window>
-    <Window class="chunk">
-        <Button href="/retro">Retro Slop</Button>
-    </Window>
-    <Window class="chunk">
-        <h2>I make games and music</h2>
-        <Button href="/gallery">You can find thoses here</Button>
-    </Window>
-    <Window class="chunk">
-        <a href="https://carseatheadrest.bandcamp.com/album/twin-fantasy" style="height: 90%; display: flex; justify-content: center; ">
-            <iframe style="border: 0; border-radius: 1em; width: 90%;" src="https://bandcamp.com/EmbeddedPlayer/album=357879300/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/" seamless />
-        </a>
-    </Window>
+    </a>
 </Layout>
 
+
+<style lang="scss">
+.chunk {
+    $curve-radius: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .inner-chunk {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 18vw;
+        background-color: rgba(0, 0, 0, 0.1);
+        height: 18vw;
+        border-radius: $curve-radius $curve-radius $curve-radius $curve-radius;
+    }
+}
+a{
+    text-decoration: none;
+    color: white;
+    transition: all .3s ease;
+
+    &:hover{
+        color: #8f8f8f;
+    }
+}
+</style>

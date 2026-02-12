@@ -1,6 +1,6 @@
 ---
 import a from "../components/Button.astro";
-import Window from "../components/Window.astro";
+import WideWindow from "../components/WideWindow.astro";
 import Layout from "../layouts/Layout.astro";
 const posts = Object.values(import.meta.glob('./projects/*.mdx', { eager: true }));
 ---
@@ -8,7 +8,13 @@ const posts = Object.values(import.meta.glob('./projects/*.mdx', { eager: true }
 <Layout title="Gallery">
     <div id="holder">
         <div id="projects">
-            {posts.map(post => <a href={(post as any).url}><Window>{(post as any).frontmatter.title}</Window></a>)}
+            {
+                posts.map(
+                    post => (post as any).frontmatter.download === "yes" ? 
+                    <a href={(post as any).frontmatter.url} download><WideWindow>{(post as any).frontmatter.title}</WideWindow></a>
+                    : <a href={(post as any).frontmatter.url}><WideWindow>{(post as any).frontmatter.title}</WideWindow></a>
+                )
+            }
         </div>
     </div>
     
@@ -19,8 +25,8 @@ const posts = Object.values(import.meta.glob('./projects/*.mdx', { eager: true }
         width: 42vw;
 
         #projects{
-            display: grid;
-            grid-template-columns: auto auto;
+            display: flex;
+            flex-direction: column;
             
             &>*{
                 margin-bottom: 1em;
