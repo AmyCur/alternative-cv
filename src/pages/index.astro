@@ -1,59 +1,25 @@
 ---
 import Button from "../components/Button.astro";
+import RandomText from "../components/RandomText.astro";
+import Tooltip from "../components/Tooltip.astro";
 import Window from "../components/Window.astro";
 import Layout from "../layouts/Layout.astro";
+import Page from "../layouts/Page.astro";
 ---
 
-<Layout title="Home">
-    <a href="/about-me" class="chunk">
-        <Window>
-            <h1>About Me</h1>
-        </Window>
-    </a>
-    <a href="/retro" class="chunk">
-        <Window>
-            <h1>Retro Slop</h1>
-        </Window>
-    </a>
-    <a href="/gallery" class="chunk">
-        <Window >
-            <h1>Gallery</h1>
-        </Window>
-    </a>
-    <a href="#" class="chunk">
-        <Window >
-            <!-- <a href="https://carseatheadrest.bandcamp.com/album/twin-fantasy" style="height: 90%; display: flex; justify-content: center; ">
-                <iframe style="border: 0; border-radius: 1em; width: 90%;" src="https://bandcamp.com/EmbeddedPlayer/album=357879300/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/" seamless />
-            </a> -->
-    </Window>
-    </a>
-</Layout>
+<Page>
+    <h1>Welcome to my amazing website!!!</h1>
 
+    <h3>My name is [$NAME] (F/TFNB 18)</h3>
+    I'm a games designer from England who is very into
+    <Tooltip tooltip="Favourite Song: [Unnamed 02] OFC">
+        <RandomText
+            normal="Car Seat Headrest."
+            random="Car Seat Head Sweat."
+        />
+    </Tooltip>
+    This website was made as a fun project to make something cool and to
+    show off all of the amazeballs things I've made. You can navigate though
+    the wesite by using the top-bar
+</Page>
 
-<style lang="scss">
-.chunk {
-    $curve-radius: 1em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    .inner-chunk {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 18vw;
-        background-color: rgba(0, 0, 0, 0.1);
-        height: 18vw;
-        border-radius: $curve-radius $curve-radius $curve-radius $curve-radius;
-    }
-}
-a{
-    text-decoration: none;
-    color: white;
-    transition: all .3s ease;
-
-    &:hover{
-        color: #8f8f8f;
-    }
-}
-</style>

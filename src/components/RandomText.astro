@@ -1,0 +1,13 @@
+---
+const {normal, random} = Astro.props;
+---
+
+
+<div data-normal={normal} data-random={random} id="data-div"></div>
+
+
+<script lang="js">
+    const data_div=document.getElementById("data-div");
+    const data = data_div.dataset;
+    data_div.innerHTML=Math.floor(Math.random()*10) === 0 ? data.random : data.normal;
+</script>

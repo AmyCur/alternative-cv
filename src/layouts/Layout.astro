@@ -21,7 +21,16 @@ const { title = "Base Title" } = Astro.props;
 		<div id="content">
 			<div id="box">
 				<div id="side-bar">
-					 <Button href="/">Homeslop</Button> 
+					<div id="buttons">
+						<Button href="/">Homeslop</Button> 
+						<Button href="/about-me">About Me</Button> 
+						<Button href="/gallery">Gallery</Button> 
+						<Button href="/retro">Super Retro Zone</Button> 
+					</div>
+					<div id="other">
+						<img src="/baby.gif" alt="">
+					</div>
+					 
 				</div>
 				<div id="main-box">
 					<slot />
@@ -47,36 +56,53 @@ const { title = "Base Title" } = Astro.props;
 
 		#box {
 			display: flex;
-			justify-content: space-around;
 			align-items: center;
+			flex-direction: column;
 			height: 100vh;
-			width: 60vw;
+			width: 60em;
 
-			& > * {
-				height: 80%;
-				display: flex;
-				flex-direction: column;
-				text-align: center;
-				justify-content: space-around;
-			}
+			// & > * {
+			// 	display: flex;
+			// 	flex-direction: column;
+			// 	text-align: center;
+			// 	justify-content: space-around;
+			// }
 
 			#side-bar {
-				width: 15vw;
+				
+				display: flex;
+				justify-content: space-around;
+			
+				margin-top: 2em;
+				margin-bottom: 2em;
+				width: 100%;
+				min-height: 15vh;
 				background-color: rgba(0, 0, 0, 0.1);
 				border-radius: $curve-radius;
 				border: .1em solid white;
-				display: flex;
-				flex-direction: column;
-				justify-content: space-around;
-				align-items: center;
+
+				#buttons{
+					display: flex;
+					justify-content: space-around;
+					align-items: center;
+
+					
+				}
+
+				#other{
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					img{
+						width: 5em;
+					}
+				}
 			}
 
 			#main-box {
-				min-width: 40vw;
-
 				display: grid;
 				grid-template-columns: auto auto;
-
+				
 				.chunk {
 					display: flex;
 					justify-content: center;
@@ -86,9 +112,7 @@ const { title = "Base Title" } = Astro.props;
 						display: flex;
 						justify-content: center;
 						align-items: center;
-						width: 18vw;
 						background-color: rgba(0, 0, 0, 0.1);
-						height: 18vw;
 						border-radius: $curve-radius $curve-radius $curve-radius $curve-radius;
 					}
 				}

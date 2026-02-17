@@ -1,21 +1,49 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Page from "../layouts/Page.astro";
 ---
 
-<Layout title="Retro">
+<Page title="Retro">
     <div id="content">
-        <img src="baby.gif" alt="">
+        <marquee
+            direction="down"
+            width="250"
+            height="200"
+            behavior="alternate"
+            class="outlined">
+            <marquee behavior="alternate">
+                <img src="baby.gif" alt="">
+
+            </marquee>
+        </marquee>
+                <marquee
+            direction="down"
+            width="250"
+            height="200"
+            behavior="alternate"
+            class="outlined">
+            <marquee behavior="alternate">
+                <img src="baby.gif" alt="">
+
+            </marquee>
+        </marquee>
     </div>
-</Layout>
+</Page>
 
 <style lang="scss">
     #content{
-        background-color: rgba(0, 0, 0, 0.1);
+      
         min-width: 40vw;
+        height: 100vh;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
+
+        marquee{
+            width: 40vw;
+            height: max-content;
+        }
         
 
         img{
