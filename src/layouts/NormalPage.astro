@@ -1,0 +1,73 @@
+---
+import "../styles/global.scss";
+import "../styles/consts.scss";
+import Button from "../components/Button.astro";
+const { title = "Base Title" } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<script
+			src="https://kit.fontawesome.com/e4b9b41e06.js"
+			crossorigin="anonymous"></script>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/public/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body>
+		<div id="content">
+			<div id="title">
+				<h1>{title}</h1>
+				<Button href="/">Home Slop</Button>
+			</div>
+			<div id="inner">
+				<slot />
+			</div>
+		</div>
+	</body>
+</html>
+
+<style lang="scss">
+	html,
+	body {
+		margin: 0;
+		width: 100%;
+		background-image: url("https://i.pinimg.com/originals/fc/01/fc/fc01fcf41d53c4cab99e05c2dcaf848f.gif");
+	}
+	
+	#content{
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		margin-top: 5em;
+
+		#title{
+			margin-bottom: 2em;
+			display: flex;
+			justify-content: space-around;
+			align-items: center;
+			padding-top: 1em;
+			padding-bottom: 1em;
+		}
+
+		#title,#inner{
+			background-color: rgba(0, 0, 0, 0.1);
+			min-width: 40vw;
+			border: .1em solid white;
+		}
+
+		#inner{
+			
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			align-items: center;
+		}
+	}
+
+
+</style>
