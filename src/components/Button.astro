@@ -3,19 +3,20 @@ const {href, img="baby.gif"} = Astro.props;
 ---
 
 <a href={href} class="rainbow">
-    <img src={img} alt="">
     <slot />
 </a>
 
 <style lang="scss">
     a{
         background-color: rgba(0,0,0,0.1);
+        backdrop-filter: blur(5px);
         color: white;
         width: fit-content;
         height: fit-content;
         padding: .5em;
         margin: .2em;
         width: 8em;
+        height: 3em;
         text-align: center;
         border-radius: .1em;
         transition: background-color .1s ease;
