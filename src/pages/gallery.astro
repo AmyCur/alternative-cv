@@ -22,11 +22,12 @@ const posts = Object.values(import.meta.glob('./projects/*.mdx', { eager: true }
 
 <style lang="scss">
     #holder{
-        width: 42vw;
+        width: 60em;
 
         #projects{
-            display: flex;
-            flex-direction: column;
+            display: grid;
+            grid-template-columns: auto auto auto;
+            
             
             &>*{
                 margin-bottom: 1em;
